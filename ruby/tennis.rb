@@ -24,6 +24,18 @@ class TennisGame1
       }.fetch(@p1points, "Deuce")
   end
 
+  def get_advantage_or_win(minusResult)
+    if (minusResult==1)
+      result ="Advantage " + @player1Name
+    elsif (minusResult>=2)
+      result = "Win for " + @player1Name
+    elsif (minusResult ==-1)
+      result ="Advantage " + @player2Name
+    else
+      result ="Win for " + @player2Name
+    end
+  end
+
   def score
     result = ""
     tempScore=0
@@ -31,15 +43,7 @@ class TennisGame1
       result += get_tied_result
     elsif (@p1points>=4 or @p2points>=4)
       minusResult = @p1points-@p2points
-      if (minusResult==1)
-        result ="Advantage " + @player1Name
-      elsif (minusResult ==-1)
-        result ="Advantage " + @player2Name
-      elsif (minusResult>=2)
-        result = "Win for " + @player1Name
-      else
-        result ="Win for " + @player2Name
-      end
+      result += get_advantage_or_win(minusResult)
     else
       (1...3).each do |i|
         if (i==1)
