@@ -83,69 +83,70 @@ class TennisGame2
       result = score[@p1points]
       result += "-All"
     end
+
     if (@p1points==@p2points and @p1points>2)
         result = "Deuce"
     end
 
-    p1res = ""
-    p2res = ""
+    p1result = ""
+    p2result = ""
     if (@p1points > 0 and @p2points==0)
       if (@p1points==1)
-        p1res = "Fifteen"
+        p1result = "Fifteen"
       end
       if (@p1points==2)
-        p1res = "Thirty"
+        p1result = "Thirty"
       end
       if (@p1points==3)
-        p1res = "Forty"
+        p1result = "Forty"
       end
-      p2res = "Love"
-      result = p1res + "-" + p2res
+      p2result = "Love"
+      result = p1result + "-" + p2result
     end
     if (@p2points > 0 and @p1points==0)
       if (@p2points==1)
-        p2res = "Fifteen"
+        p2result = "Fifteen"
       end
       if (@p2points==2)
-        p2res = "Thirty"
+        p2result = "Thirty"
       end
       if (@p2points==3)
-        p2res = "Forty"
+        p2result = "Forty"
       end
 
-      p1res = "Love"
-      result = p1res + "-" + p2res
+      p1result = "Love"
+      result = p1result + "-" + p2result
     end
 
     if (@p1points>@p2points and @p1points < 4)
       if (@p1points==2)
-        p1res="Thirty"
+        p1result = "Thirty"
       end
       if (@p1points==3)
-        p1res="Forty"
+        p1result = "Forty"
       end
       if (@p2points==1)
-        p2res="Fifteen"
+        p2result = "Fifteen"
       end
       if (@p2points==2)
-        p2res="Thirty"
+        p2result = "Thirty"
       end
-      result = p1res + "-" + p2res
+      result = p1result + "-" + p2result
     end
     if (@p2points>@p1points and @p2points < 4)
       if (@p2points==2)
-        p2res="Thirty"
+        p2result = "Thirty"
       end
       if (@p2points==3)
-        p2res="Forty"
+        p2result = "Forty"
       end
       if (@p1points==1)
-        p1res="Fifteen"
+        p1result = "Fifteen"
       end
       if (@p1points==2)
-        p1res="Thirty"
+        p1result = "Thirty"
       end
-      result = p1res + "-" + p2res
+      result = p1result  + "-" + p2result
     end
     if (@p1points > @p2points and @p2points >= 3)
       result = "Advantage " + @player1Name
