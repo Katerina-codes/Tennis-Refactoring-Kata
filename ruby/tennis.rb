@@ -25,18 +25,18 @@ class TennisGame1
       }.fetch(@p1points, "Deuce")
   end
 
-  def get_advantage_or_win(p1points_minus_p2points)
+  def get_advantage_or_win(points_difference)
       game_status = {
         1 => "Advantage " + @player1Name,
         -1 => "Advantage " + @player2Name
       }
 
-    if p1points_minus_p2points == 1
-      @result = game_status[p1points_minus_p2points]
-    elsif p1points_minus_p2points >= 2
+    if points_difference == 1
+      @result = game_status[points_difference]
+    elsif points_difference >= 2
       @result = "Win for " + @player1Name
-    elsif p1points_minus_p2points == -1
-      @result = game_status[p1points_minus_p2points]
+    elsif points_difference == -1
+      @result = game_status[points_difference]
     else
       @result = "Win for " + @player2Name
     end
