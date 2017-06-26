@@ -58,12 +58,10 @@ class TennisGame1
 
 
   def score
-    p1points_minus_p2points = @p1points - @p2points
-
     if @p1points == @p2points
       @result += get_tied_result
     elsif @p1points >= 4 or @p2points >= 4
-      @result += get_advantage_or_win(p1points_minus_p2points)
+      @result += get_advantage_or_win(@p1points - @p2points)
     else
       @result += get_final_score
     end
