@@ -38,12 +38,12 @@ class TennisGame1
   end
 
   def get_final_score
-    tempScore=0
-    (1...3).each do |i|
-      if i == 1
+    tempScore = 0
+    (1...3).each do |number|
+      if number == 1
         tempScore = @p1points
       else
-        @result+="-"
+        @result += "-"
         tempScore = @p2points
       end
       @result += {
@@ -53,20 +53,21 @@ class TennisGame1
           3 => "Forty",
       }[tempScore]
     end
-    @result
+  @result
   end
 
 
   def score
+    p1points_minus_p2points = @p1points - @p2points
+
     if @p1points == @p2points
       @result += get_tied_result
     elsif @p1points >= 4 or @p2points >= 4
-      p1points_minus_p2points = @p1points-@p2points
       @result += get_advantage_or_win(p1points_minus_p2points)
     else
       @result += get_final_score
     end
-    @result
+  @result
   end
 end
 
