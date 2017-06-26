@@ -18,7 +18,7 @@ class TennisGame1
   end
 
   def get_tied_result
-      result = {
+      @result = {
           0 => "Love-All",
           1 => "Fifteen-All",
           2 => "Thirty-All",
@@ -27,13 +27,13 @@ class TennisGame1
 
   def get_advantage_or_win(minusResult)
     if (minusResult==1)
-      result ="Advantage " + @player1Name
+      @result ="Advantage " + @player1Name
     elsif (minusResult>=2)
-      result = "Win for " + @player1Name
+      @result = "Win for " + @player1Name
     elsif (minusResult ==-1)
-      result ="Advantage " + @player2Name
+      @result ="Advantage " + @player2Name
     else
-      result ="Win for " + @player2Name
+      @result ="Win for " + @player2Name
     end
   end
 
