@@ -26,18 +26,13 @@ class TennisGame1
   end
 
   def get_advantage_or_win(points_difference)
-      game_status = {
-        1 => "Advantage " + @player1Name,
-        -1 => "Advantage " + @player2Name
-      }
-
-    if points_difference == 1
-      @result = game_status[points_difference]
-    elsif points_difference >= 2
-      @result = "Win for " + @player1Name
+      if points_difference == 1
+      @result = "Advantage " + @player1Name
     elsif points_difference == -1
-      @result = game_status[points_difference]
-    else
+      @result = "Advantage " + @player2Name
+    elsif points_difference > 1
+      @result = "Win for " + @player1Name
+    elsif points_difference < -1
       @result = "Win for " + @player2Name
     end
   end
