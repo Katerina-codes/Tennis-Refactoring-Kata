@@ -26,7 +26,7 @@ class TennisGame1
   end
 
   def get_advantage_or_win(points_difference)
-      if points_difference == 1
+    if points_difference == 1
       @result = "Advantage " + @player1Name
     elsif points_difference == -1
       @result = "Advantage " + @player2Name
@@ -56,9 +56,8 @@ class TennisGame1
   @result
   end
 
-
   def score
-    if @p1points == @p2points
+    if draw?
       @result += get_tied_result
     elsif @p1points >= 4 || @p2points >= 4
       @result += get_advantage_or_win(@p1points - @p2points)
@@ -67,6 +66,11 @@ class TennisGame1
     end
   @result
   end
+
+  def draw?
+    @p1points == @p2points
+  end
+
 end
 
 class TennisGame2
