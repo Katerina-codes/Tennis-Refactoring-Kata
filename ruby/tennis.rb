@@ -6,6 +6,7 @@ class TennisGame1
     @player2Name = player2Name
     @p1points = 0
     @p2points = 0
+    @result = ""
   end
 
   def won_point(playerName)
@@ -37,38 +38,35 @@ class TennisGame1
   end
 
   def get_final_score
-    result = ""
     tempScore=0
     (1...3).each do |i|
       if (i==1)
         tempScore = @p1points
       else
-        result+="-"
+        @result+="-"
         tempScore = @p2points
       end
-      result += {
+      @result += {
           0 => "Love",
           1 => "Fifteen",
           2 => "Thirty",
           3 => "Forty",
       }[tempScore]
     end
-    result
+    @result
   end
 
 
   def score
-    result = ""
-    tempScore=0
     if (@p1points==@p2points)
-      result += get_tied_result
+      @result += get_tied_result
     elsif (@p1points>=4 or @p2points>=4)
       minusResult = @p1points-@p2points
-      result += get_advantage_or_win(minusResult)
+      @result += get_advantage_or_win(minusResult)
     else
-      result += get_final_score
+      @result += get_final_score
     end
-    result
+    @result
   end
 end
 
