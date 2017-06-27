@@ -73,9 +73,6 @@ class TennisGame2
   end
 
   def get_points(players_points)
-    p1result = ""
-    p2result = ""
-
     score = {
       0 => "Love",
       1 => "Fifteen",
@@ -102,16 +99,15 @@ class TennisGame2
     if (@p1points > 0  and @p2points==0)
       if (@p1points==1)
         p1result = get_points(@p1points)
-      end
-      if (@p1points==2)
+      elsif (@p1points==2)
         p1result = get_points(@p1points)
-      end
-      if (@p1points==3)
+      elsif (@p1points==3)
         p1result = get_points(@p1points)
       end
       p2result = "Love"
       result = p1result + "-" + p2result
     end
+
 
     if (@p2points > 0 and @p1points==0)
       if (@p2points==1)
