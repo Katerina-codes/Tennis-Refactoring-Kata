@@ -91,8 +91,13 @@ class TennisGame2
     p1result = ""
     p2result = ""
     if (@p1points > 0 and @p2points==0)
+      p1score = {
+        1 => "Fifteen",
+        2 => "Thirty",
+        3 => "Forty"
+      }
       if (@p1points==1)
-        p1result = "Fifteen"
+        p1result = p1score[@p1points]
       end
       if (@p1points==2)
         p1result = "Thirty"
