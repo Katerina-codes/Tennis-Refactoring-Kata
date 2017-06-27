@@ -77,6 +77,7 @@ class TennisGame2
     p2result = ""
 
     score = {
+      0 => "Love",
       1 => "Fifteen",
       2 => "Thirty",
       3 => "Forty"
@@ -87,12 +88,7 @@ class TennisGame2
   def score
     result = ""
     if (@p1points == @p2points and @p1points < 3)
-      score = {
-        0 => "Love",
-        1 => "Fifteen",
-        2 => "Thirty"
-      }
-      result = score[@p1points]
+      result = get_points
       result += "-All"
     end
 
