@@ -115,13 +115,13 @@ class TennisGame2
 
     if (@p2points > 0 and @p1points==0)
       if (@p2points==1)
-        p2result = "Fifteen"
+        p2result = get_points(@p2points)
       end
       if (@p2points==2)
-        p2result = "Thirty"
+        p2result = get_points(@p1points)
       end
       if (@p2points==3)
-        p2result = "Forty"
+        p2result = get_points(@p1points)
       end
       p1result = "Love"
       result = p1result + "-" + p2result
