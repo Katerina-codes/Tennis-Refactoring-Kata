@@ -82,7 +82,7 @@ class TennisGame2
       2 => "Thirty",
       3 => "Forty"
     }
-    p1result = score[@p1points]
+    score[@p1points]
   end
 
   def score
