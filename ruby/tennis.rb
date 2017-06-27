@@ -72,6 +72,18 @@ class TennisGame2
     end
   end
 
+  def get_points
+    p1result = ""
+    p2result = ""
+
+    score = {
+      1 => "Fifteen",
+      2 => "Thirty",
+      3 => "Forty"
+    }
+    p1result = score[@p1points]
+  end
+
   def score
     result = ""
     if (@p1points == @p2points and @p1points < 3)
@@ -90,24 +102,21 @@ class TennisGame2
 
     p1result = ""
     p2result = ""
-    if (@p1points > 0 and @p2points==0)
-      p1score = {
-        1 => "Fifteen",
-        2 => "Thirty",
-        3 => "Forty"
-      }
+
+    if (@p1points > 0  and @p2points==0)
       if (@p1points==1)
-        p1result = p1score[@p1points]
+        p1result = get_points
       end
       if (@p1points==2)
-        p1result = p1score[@p1points]
+        p1result = get_points
       end
       if (@p1points==3)
-        p1result = p1score[@p1points]
+        p1result = get_points
       end
       p2result = "Love"
       result = p1result + "-" + p2result
     end
+
     if (@p2points > 0 and @p1points==0)
       if (@p2points==1)
         p2result = "Fifteen"
@@ -118,7 +127,6 @@ class TennisGame2
       if (@p2points==3)
         p2result = "Forty"
       end
-
       p1result = "Love"
       result = p1result + "-" + p2result
     end
