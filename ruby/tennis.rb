@@ -103,7 +103,7 @@ class TennisGame2
         p1result = p1score[@p1points]
       end
       if (@p1points==3)
-        p1result = "Forty"
+        p1result = p1score[@p1points]
       end
       p2result = "Love"
       result = p1result + "-" + p2result
