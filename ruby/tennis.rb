@@ -82,7 +82,7 @@ class TennisGame2
     score[players_points]
   end
 
-  def get_p1_score(p1score, p2score)
+  def get_player_score(p1score, p2score)
     p1score + "-" + p2score
   end
 
@@ -131,7 +131,7 @@ class TennisGame2
     if (@p1points > 0 && @p1points <= 3 && @p2points==0)
       p1result = get_points(@p1points)
       p2result = "Love"
-      result = get_p1_score(p1result, p2result)
+      result = get_player_score(p1result, p2result)
     end
 
     if (@p2points > 0 && @p2points <= 3 && @p1points==0)
