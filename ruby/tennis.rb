@@ -92,6 +92,14 @@ class TennisGame2
     end
   end
 
+  def get_player_advantage(p1points, p2points)
+    if p1points > p2points
+      "Advantage " + @player1Name
+    else
+      "Advantage " + @player2Name
+    end
+  end
+
   def player_1_has_advantage?
     @p1points > @p2points and @p2points >= 3
   end
@@ -166,11 +174,11 @@ class TennisGame2
     end
 
     if player_1_has_advantage?
-      result = "Advantage " + @player1Name
+      result = get_player_advantage(@p1points, @p2points)
+    elsif player2_has_advantage?
+      result = get_player_advantage(@p1points, @p2points)
     end
-    if player2_has_advantage?
-      result = "Advantage " + @player2Name
-    end
+
     if (@p1points>=4 and @p2points>=0 and (@p1points-@p2points)>=2)
       result = "Win for " + @player1Name
     end
