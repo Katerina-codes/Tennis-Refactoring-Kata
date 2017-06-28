@@ -92,6 +92,14 @@ class TennisGame2
     end
   end
 
+  def player_1_has_advantage?
+    @p1points > @p2points and @p2points >= 3
+  end
+
+  def player2_has_advantage?
+     @p2points > @p1points and @p1points >= 3
+  end
+
   def score
     if @p1points == @p2points
       result = score_is_equal
@@ -157,7 +165,7 @@ class TennisGame2
       result = p1result  + "-" + p2result
     end
 
-    if (@p1points > @p2points and @p2points >= 3)
+    if player_1_has_advantage?
       result = "Advantage " + @player1Name
     end
     if (@p2points > @p1points and @p1points >= 3)
