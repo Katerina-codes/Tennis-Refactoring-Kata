@@ -140,7 +140,7 @@ class TennisGame2
       result = get_player_score(p1result, p2result)
     end
 
-    if (@p1points > @p2points and @p1points < 4)
+    if (@p1points > @p2points and @p1points <= 3)
       if (@p1points == 2)
         p1result = "Thirty"
       end
@@ -155,7 +155,7 @@ class TennisGame2
       end
       result = p1result + "-" + p2result
     end
-    if (@p2points > @p1points and @p2points < 4)
+    if (@p2points > @p1points and @p2points <= 3)
       if (@p2points == 2)
         p2result = "Thirty"
       end
