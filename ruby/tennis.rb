@@ -168,7 +168,7 @@ class TennisGame2
     if player_1_has_advantage?
       result = "Advantage " + @player1Name
     end
-    if (@p2points > @p1points and @p1points >= 3)
+    if player2_has_advantage?
       result = "Advantage " + @player2Name
     end
     if (@p1points>=4 and @p2points>=0 and (@p1points-@p2points)>=2)
