@@ -132,22 +132,17 @@ class TennisGame2
       p1result = get_points(@p1points)
       p2result = "Love"
       result = get_player_score(p1result, p2result)
-    end
-
-    if (@p2points > 0 && @p2points <= 3 && @p1points==0)
+    elsif (@p2points > 0 && @p2points <= 3 && @p1points==0)
       p2result = get_points(@p2points)
       p1result = "Love"
       result = get_player_score(p1result, p2result)
-    end
-
-    if (@p1points > @p2points and @p1points <= 3)
+    elsif (@p1points > @p2points and @p1points <= 3)
       p1result = get_points(@p1points)
       p2result = get_points(@p2points)
       result = p1result + "-" + p2result
-    end
-    if (@p2points > @p1points and @p2points <= 3)
+    elsif (@p2points > @p1points and @p2points <= 3)
       p1result = get_points(@p1points)
-      p2result = get_points(@p2points) 
+      p2result = get_points(@p2points)
       result = p1result  + "-" + p2result
     end
 
