@@ -101,62 +101,62 @@ class TennisGame2
     p2result = ""
 
     if (@p1points > 0  and @p2points==0)
-      if (@p1points==1)
+      if (@p1points == 1)
         p1result = get_points(@p1points)
-      elsif (@p1points==2)
+      elsif (@p1points == 2)
         p1result = get_points(@p1points)
-      elsif (@p1points==3)
+      elsif (@p1points == 3)
         p1result = get_points(@p1points)
       end
       p2result = "Love"
       result = p1result + "-" + p2result
     end
 
-
     if (@p2points > 0 and @p1points==0)
-      if (@p2points==1)
+      if (@p2points == 1)
         p2result = get_points(@p2points)
       end
-      if (@p2points==2)
+      if (@p2points == 2)
         p2result = get_points(@p1points)
       end
-      if (@p2points==3)
+      if (@p2points == 3)
         p2result = get_points(@p1points)
       end
       p1result = "Love"
       result = p1result + "-" + p2result
     end
 
-    if (@p1points>@p2points and @p1points < 4)
-      if (@p1points==2)
+    if (@p1points > @p2points and @p1points < 4)
+      if (@p1points == 2)
         p1result = "Thirty"
       end
-      if (@p1points==3)
+      if (@p1points == 3)
         p1result = "Forty"
       end
-      if (@p2points==1)
+      if (@p2points == 1)
         p2result = "Fifteen"
       end
-      if (@p2points==2)
+      if (@p2points == 2)
         p2result = "Thirty"
       end
       result = p1result + "-" + p2result
     end
-    if (@p2points>@p1points and @p2points < 4)
-      if (@p2points==2)
+    if (@p2points > @p1points and @p2points < 4)
+      if (@p2points == 2)
         p2result = "Thirty"
       end
-      if (@p2points==3)
+      if (@p2points == 3)
         p2result = "Forty"
       end
-      if (@p1points==1)
+      if (@p1points == 1)
         p1result = "Fifteen"
       end
-      if (@p1points==2)
+      if (@p1points == 2)
         p1result = "Thirty"
       end
       result = p1result  + "-" + p2result
     end
+
     if (@p1points > @p2points and @p2points >= 3)
       result = "Advantage " + @player1Name
     end
