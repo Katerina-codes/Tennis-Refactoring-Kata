@@ -137,7 +137,7 @@ class TennisGame2
     if (@p2points > 0 && @p2points <= 3 && @p1points==0)
       p2result = get_points(@p2points)
       p1result = "Love"
-      result = p1result + "-" + p2result
+      result = get_player_score(p1result, p2result)
     end
 
     if (@p1points > @p2points and @p1points < 4)
