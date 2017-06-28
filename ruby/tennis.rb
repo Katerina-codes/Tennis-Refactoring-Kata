@@ -82,17 +82,19 @@ class TennisGame2
     score[players_points]
   end
 
-  def deuce?
-    @p1points==@p2points and @p1points == 3 || @p1points == 4
+  def score_is_equal
+    if @p1points == @p2points && @p1points < 3
+      result = get_points(@p1points)
+      result += "-All"
+    else
+      "Deuce"
+    end
   end
 
   def score
     result = ""
-    if (@p1points == @p2points && @p1points < 3)
-      result = get_points(@p1points)
-      result += "-All"
-    elsif deuce?
-        result = "Deuce"
+    if @p1points == @p2points
+      result = score_is_equal
     end
 
     p1result = ""
