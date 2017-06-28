@@ -141,18 +141,8 @@ class TennisGame2
     end
 
     if (@p1points > @p2points and @p1points <= 3)
-      if (@p1points == 2)
-        p1result = "Thirty"
-      end
-      if (@p1points == 3)
-        p1result = "Forty"
-      end
-      if (@p2points == 1)
-        p2result = "Fifteen"
-      end
-      if (@p2points == 2)
-        p2result = "Thirty"
-      end
+      p1result = get_points(@p1points)
+      p2result = get_points(@p2points)
       result = p1result + "-" + p2result
     end
     if (@p2points > @p1points and @p2points <= 3)
