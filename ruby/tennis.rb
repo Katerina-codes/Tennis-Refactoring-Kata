@@ -108,6 +108,14 @@ class TennisGame2
      @p2points > @p1points and @p1points >= 3
   end
 
+  def player_1_has_won?
+    @p1points>=4 and @p2points>=0 and (@p1points-@p2points)>=2
+  end
+
+  def player_2_has_won?
+    @p2points>=4 and @p1points>=0 and (@p2points-@p1points)>=2
+  end
+
   def score
     if @p1points == @p2points
       result = score_is_equal
@@ -179,10 +187,10 @@ class TennisGame2
       result = get_player_advantage(@p1points, @p2points)
     end
 
-    if (@p1points>=4 and @p2points>=0 and (@p1points-@p2points)>=2)
+    if player_1_has_won?
       result = "Win for " + @player1Name
     end
-    if (@p2points>=4 and @p1points>=0 and (@p2points-@p1points)>=2)
+    if player_2_has_won?
       result = "Win for " + @player2Name
     end
     result
