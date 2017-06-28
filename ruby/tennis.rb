@@ -83,6 +83,7 @@ class TennisGame2
   end
 
   def score_is_equal
+    result = ""
     if @p1points == @p2points && @p1points < 3
       result = get_points(@p1points)
       result += "-All"
@@ -92,7 +93,6 @@ class TennisGame2
   end
 
   def score
-    result = ""
     if @p1points == @p2points
       result = score_is_equal
     end
