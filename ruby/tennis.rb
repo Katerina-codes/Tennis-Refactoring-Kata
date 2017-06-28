@@ -136,14 +136,10 @@ class TennisGame2
       p2result = get_points(@p2points)
       p1result = "Love"
       result = get_player_score(p1result, p2result)
-    elsif (@p1points > @p2points and @p1points <= 3)
+    elsif (@p1points > @p2points and @p1points <= 3) || (@p2points > @p1points and @p2points <= 3)
       p1result = get_points(@p1points)
       p2result = get_points(@p2points)
       result = p1result + "-" + p2result
-    elsif (@p2points > @p1points and @p2points <= 3)
-      p1result = get_points(@p1points)
-      p2result = get_points(@p2points)
-      result = p1result  + "-" + p2result
     end
 
     if player_1_has_advantage?
